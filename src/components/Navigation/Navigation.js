@@ -6,7 +6,7 @@ import Logo from '../Logo';
 const items = [
   {
     name: "Поиск",
-    path: "/"
+    path: "search"
   },
   {
     name: "Избранное",
