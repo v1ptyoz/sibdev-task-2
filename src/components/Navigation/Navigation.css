@@ -1,0 +1,11 @@
+.navigation {
+  display: flex;
+  gap: 40px;
+}
+.navigation__logo .logo {
+  width: 19px;
+  height: 39px;
+}
+.navigation__menu {
+  flex: 1;
+}
