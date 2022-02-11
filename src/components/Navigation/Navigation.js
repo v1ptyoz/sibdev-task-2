@@ -27,7 +27,7 @@ export function Navigation() {
           const key = index + 1;
           return <Menu.Item key={key} onClick={() => navigate(item.path)}>{item.name}</Menu.Item>;
         })}
-        <Menu.Item style={{ marginLeft: "auto" }}>Выйти</Menu.Item>
+        <Menu.Item key={items.length + 1} style={{ marginLeft: "auto" }}>Выйти</Menu.Item>
       </Menu>
     </div>
   )
