@@ -1,6 +1,6 @@
 import "./FavoriteItem.css"
 import React, { useState } from 'react';
-import { FavoriteItemModal } from "../FavoriteItemModal/FavoriteItemModal";
+import FavoriteItemModal from "../FavoriteItemModal";
 
 export function FavoriteItem() {
   const [isModalVisible, setIsModalVisible] = useState(false);
