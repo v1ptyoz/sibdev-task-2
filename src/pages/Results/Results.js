@@ -1,7 +1,8 @@
 import "./Results.css"
 import SearchForm from "../../components/SearchForm";
 import { Typography } from 'antd';
-import Controls from "../../Controls";
+import Controls from "../../components/Controls";
+import Cards from "../../components/Cards";
 
 const { Title } = Typography;
 
@@ -13,6 +14,7 @@ export function Results() {
           <Title level={3}>Поиск видео</Title>
         </SearchForm>
         <Controls />
+        <Cards grid={true}/>
       </div>
     </div>
   )
