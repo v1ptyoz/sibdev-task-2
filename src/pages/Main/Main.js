@@ -1,24 +1,21 @@
 import { Layout } from 'antd';
 import SiteHeader from '../../components/SiteHeader';
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { Outlet, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 const { Content } = Layout;
 
 export function Main() {
-  const location = useLocation();
-  const navigate = useNavigate()
+  const isLoggedIn = useSelector(state => state.user.isLoggedIn);
 
-  useEffect(() =>{
-    if (location.pathname === "/")
-     navigate("search")
-  }, [])
 
-  return (
+  return isLoggedIn ? (
     <>
       <SiteHeader />
       <Content style={{ width: '100%', height: '100%', background: '#FAFAFA' }}>
         <Outlet />
       </Content>
     </>
+  ) : (
+    <Navigate to="login" />
   )
 }
