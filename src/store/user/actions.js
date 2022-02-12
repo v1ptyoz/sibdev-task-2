@@ -1,6 +1,7 @@
 export const SET_LOADING = "SET_LOADING";
 export const SET_ERROR = "SET_ERROR";
 export const LOGIN = "LOGIN";
+export const LOGOUT = "LOGOUT";
 
 export const SetLoading = () => ({
   type: SET_LOADING
@@ -14,4 +15,8 @@ export const SetError = (payload) => ({
 export const Login = (payload) => ({
   type: LOGIN,
   payload: payload
+})
+
+export const Logout = () => ({
+  type: LOGOUT,
 })

@@ -1,9 +1,9 @@
-import { SET_LOADING, SET_ERROR, LOGIN } from "./actions";
+import { SET_LOADING, SET_ERROR, LOGIN, LOGOUT } from "./actions";
 
 const initState = {
   isLoggedIn: localStorage.getItem("token") ? true : false,
   token: localStorage.getItem("token"),
-  username: null,
+  username: localStorage.getItem("username"),
   loading: false,
   error: null
  };
@@ -31,6 +31,15 @@ const user = (state = initState, action) => {
         username: action.payload.username,
         token: action.payload.token,
         loading: false
+      }
+    case LOGOUT:
+      localStorage.removeItem("token");
+      localStorage.removeItem("username");
+      return {
+        ...state,
+        isLoggedIn: false,
+        username: null,
+        token: null
       }
     default: return state;
   }
