@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Bret",
+    "password": "12345",
+    "token": "token-Bret"
+  },
+  {
+    "name": "Alex",
+    "password": "54321",
+    "token": "token-Alex"
+  },
+  {
+    "name": "Fred",
+    "password": "qwerty",
+    "token": "token-Fred"
+  }
+]
