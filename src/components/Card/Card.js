@@ -4,6 +4,7 @@ import { Typography } from 'antd';
 
 const { Paragraph } = Typography;
 
+export function Card({id, title, count, category, grid}) {
   const style = grid ? { flexDirection: "column", height: "226px", width: "245px", gap: 0} : {};
 
   return (
@@ -13,11 +14,11 @@ const { Paragraph } = Typography;
       </div>
       <div className="card__info">
         <div className="card__title">
-          <Paragraph ellipsis={grid ? {rows: 2} : false} style={{marginBottom: "0"}}>Как кормить кошку натуралкой | Перечень полезный для кошки бла бла бла</Paragraph>
+          <Paragraph ellipsis={grid ? {rows: 2} : false} style={{marginBottom: "0"}}>{title}</Paragraph>
         </div>
         <div className="card__meta">
-          <Paragraph ellipsis={grid ? {rows: 1} : false} style={{marginBottom: "0", color: "#b6b6b7"}}>Ветеринария и Кормление собственных животных</Paragraph>
-          <Paragraph ellipsis={grid ? {rows: 1} : false} style={{marginBottom: "0", color: "#b6b6b7"}}>555 тыс. просмотров</Paragraph>
+          <Paragraph ellipsis={grid ? {rows: 1} : false} style={{marginBottom: "0", color: "#b6b6b7"}}>{category}</Paragraph>
+          <Paragraph ellipsis={grid ? {rows: 1} : false} style={{marginBottom: "0", color: "#b6b6b7"}}>{count} просмотров</Paragraph>
         </div>
       </div>
     </div>
