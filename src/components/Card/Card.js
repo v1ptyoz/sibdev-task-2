@@ -4,8 +4,7 @@ import { Typography } from 'antd';
 
 const { Paragraph } = Typography;
 
-export function Card({id, grid}) {
-  const style = grid && { flexDirection: "column", height: "226px", width: "245px", gap: 0};
+  const style = grid ? { flexDirection: "column", height: "226px", width: "245px", gap: 0} : {};
 
   return (
     <div className="card" style={style}>
