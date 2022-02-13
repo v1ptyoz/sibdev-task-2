@@ -1,15 +1,14 @@
 import "./Cards.css";
 import Card from "../Card";
-
-const i = [1,2,3,4,5,6,7,8,9,0,11,12];
+import { useSelector } from "react-redux";
 
 export function Cards({grid}) {
-  const styles = grid && {flexDirection: "row", justifyContent: "space-between"}
+  const list = useSelector(state => state.videos.list)
   return (
     <ul className="cards" style={styles}>
-      {i.map((item, ndx) => (
-        <li key={"asdfasdf" + ndx}>
-          <Card id="f02mOEt11OQ" grid={grid} />
+      {list.map((item) => (
+        <li key={item.id}>
+          <Card id={item.id} title={item.title} count={item.count} category={item.category}  grid={grid} />
         </li>
       ))}
     </ul>
