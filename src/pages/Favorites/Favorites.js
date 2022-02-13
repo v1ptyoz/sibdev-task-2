@@ -8,23 +8,20 @@ const { Title } = Typography;
 
 export function Favorites() {
   const isLoggedIn = useSelector(state => state.user.isLoggedIn);
+  const favorites = useSelector(state => state.favorites.list);
+
   return isLoggedIn ? (
     <div className="favorites">
       <div className="container">
         <Title level={3} style={{ marginBottom: "40px" }}>Избранное</Title>
         <ul className="favorites__list">
-          <li>
-            <FavoriteItem />
-          </li>
-          <li>
-            <FavoriteItem />
-          </li>
-          <li>
-            <FavoriteItem />
-          </li>
-          <li>
-            <FavoriteItem />
-          </li>
+          {favorites.map(item => {
+            return (
+              <li key={item.query}>
+                <FavoriteItem query={item.query} deep={item.deep} sortBy={item.sortBy} name={item.name} />
+              </li>
+            )
+          })}
         </ul>
       </div>
     </div>
