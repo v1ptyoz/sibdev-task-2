@@ -1,16 +1,11 @@
 .favorite__item {
-  display: block;
-  width: 100%;
   background: #ffffff;
   margin: 0;
-  padding: 13px 20px 14px 20px;
   border-bottom: 1px solid #F1F1F1;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-weight: 500;
   font-size: 16px;
-  transition: color .3s;
-}
-
-.favorite__item:hover {
-  color: #1890ff
+  padding: 14px 20px 13px 20px;
 }
