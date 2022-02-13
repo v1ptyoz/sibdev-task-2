@@ -1,8 +1,12 @@
 import "./Login.css"
 import { Row, Col } from 'antd';
 import LoginForm from '../../components/LoginForm';
+import { useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 export function Login() {
-  return (
+  const isLoggedIn = useSelector(state => state.user.isLoggedIn);
+
+  return !isLoggedIn ? (
     <div className="login">
       <Row>
         <Col>
@@ -10,5 +14,7 @@ export function Login() {
         </Col>
       </Row>
     </div>
+  ) : (
+    <Navigate to="/search" />
   )
 }
