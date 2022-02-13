@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 export function Cards({grid}) {
   const list = useSelector(state => state.videos.list)
+  const styles = grid ? {flexDirection: "row", justifyContent: "space-between"} : {}
   return (
     <ul className="cards" style={styles}>
       {list.map((item) => (
